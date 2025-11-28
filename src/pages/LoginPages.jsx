@@ -82,16 +82,15 @@ const LoginPages = () => {
                   />
                   <span className="ml-2 text-sm text-gray-700 group-hover:text-gray-900">Remember me</span>
                 </label>
-                <a href="#" className="text-sm text-red-500 hover:text-red-600 transition-colors">
+                <NavLink to={'/forgot'} className="text-sm text-red-500 hover:text-red-600 transition-colors">
                   Forgot Password?
-                </a>
+                </NavLink>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Login
+                className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <NavLink to={'/forgot'}>Login</NavLink>
               </button>
 
               <p className="text-center text-sm text-gray-600">
@@ -116,7 +115,7 @@ const LoginPages = () => {
                 <button
                   type="button"
                   className="flex items-center justify-center py-3 border border-gray-300 rounded-lg hover:bg-gray-50 hover:scale-105 transition-all duration-300 hover:shadow-md">
-                    <img src={google} alt="" />
+                    <NavLink to={'/forgot'}><img src={google} alt="" /></NavLink>
                 </button>
                 <button
                   type="button"

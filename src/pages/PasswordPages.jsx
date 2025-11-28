@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import logo from '../img/logo.png'
+import qulf from '../img/qulf.png'
+import { NavLink } from 'react-router-dom'
 
 const PasswordPages = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -24,14 +27,11 @@ const PasswordPages = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row animate-fadeIn">
         
-        {/* Left Section - Set Password Form */}
+
         <div className="w-full lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
           <div className="animate-slideDown">
             <div className="flex items-center gap-2 mb-12">
-              <svg className="w-10 h-10 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-              </svg>
-              <span className="text-2xl font-bold text-gray-800">Your Logo</span>
+              <NavLink to={'/'}><img src={logo} alt="" /></NavLink>
             </div>
           </div>
 
@@ -40,7 +40,7 @@ const PasswordPages = () => {
             <p className="text-gray-500 mb-8">Your previous password has been reseted. Please set a new password for your account.</p>
 
             <div className="space-y-6">
-              {/* Create Password Field */}
+
               <div className="group">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Create Password</label>
                 <div className="relative">
@@ -71,7 +71,7 @@ const PasswordPages = () => {
                 </div>
               </div>
 
-              {/* Re-enter Password Field */}
+
               <div className="group">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Re-enter Password</label>
                 <div className="relative">
@@ -102,22 +102,22 @@ const PasswordPages = () => {
                 </div>
               </div>
 
-              {/* Set Password Button */}
+
               <button
                 onClick={handleSubmit}
                 className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                Set password
+                <NavLink to={'/login'}>Set password</NavLink>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Right Section - Illustration */}
+
         <div className="w-full lg:w-1/2 bg-gradient-to-br from-gray-100 to-gray-200 p-8 lg:p-12 flex items-center justify-center animate-fadeIn">
           <div className="relative w-full max-w-md animate-float">
             <img 
-              src="https://i.postimg.cc/wjd9gfYD/image.png" 
+              src={qulf} 
               alt="Set Password Illustration" 
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
@@ -126,63 +126,6 @@ const PasswordPages = () => {
 
       </div>
 
-      <style>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 0.8s ease-out;
-        }
-
-        .animate-slideDown {
-          animation: slideDown 0.6s ease-out;
-        }
-
-        .animate-slideUp {
-          animation: slideUp 0.6s ease-out;
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   )
 }
